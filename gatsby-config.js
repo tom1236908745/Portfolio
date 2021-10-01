@@ -34,5 +34,20 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    
+    {
+      resolve: "gatsby-source-microcms",
+      options: {
+        apiKey: "79a2c7b1-a661-4b91-993e-7701f4de1af2",
+        serviceId: 'nakat',
+        apis: [
+          {
+            endpoint: "blog",
+          },
+        ],
+      },
+    },
+    // graphqlのレスポンス型
+    `gatsby-plugin-typegen`
   ],
 }

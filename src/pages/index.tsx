@@ -11,7 +11,7 @@ const IndexPage = ({ data }: { data: any }) => (
 
     <StaticImage
       src="../images/gatsby-astronaut.png"
-      width={300}
+      width={100}
       quality={95}
       formats={["auto", "webp", "avif"]}
       alt="A Gatsby astronaut"

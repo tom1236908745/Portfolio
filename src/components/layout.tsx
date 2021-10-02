@@ -29,9 +29,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             marginTop: `2rem`,
           }}
         >
-          © {new Date().getFullYear()}, Built with
+          © {new Date().getFullYear()},
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <span>Tomoki Nakayama</span>
         </footer>
       </div>
     </>

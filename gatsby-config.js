@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+})
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -38,11 +41,11 @@ module.exports = {
     {
       resolve: "gatsby-source-microcms",
       options: {
-        apiKey: "79a2c7b1-a661-4b91-993e-7701f4de1af2",
-        serviceId: 'nakat',
+        apiKey: process.env.API_KEY,
+        serviceId: 'ntom',
         apis: [
           {
-            endpoint: "blog",
+            endpoint: "contents",
           },
         ],
       },

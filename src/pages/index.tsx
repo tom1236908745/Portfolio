@@ -17,10 +17,10 @@ const IndexPage = ({ data }: { data: any }) => (
       alt="A Gatsby astronaut"
       style={{ marginBottom: `1.45rem`, justifyContent: "center" }}
     />
-    <ul>
-      {data.allMicrocmsBlog.edges.map(({ node }) => (
-        <li key={node.blogId}>
-          <Link to={`/blog/${node.blogId}`}>{node.title}</Link>
+    <ul style={{listStyle: `none`,}}>
+      {data.allMicrocmsContents.edges.map(({ node }: { node: any }) => (
+        <li key={node.contentsId}>
+          <Link to={`/contents/${node.contentsId}`}>{node.title}</Link>
         </li>
       ))}
     </ul>
@@ -31,10 +31,10 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allMicrocmsBlog {
+    allMicrocmsContents {
       edges {
         node {
-          blogId
+          contentsId
           title
         }
       }

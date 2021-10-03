@@ -609,6 +609,7 @@ type SitePluginPluginOptions = {
   readonly apiKey: Maybe<Scalars['String']>;
   readonly serviceId: Maybe<Scalars['String']>;
   readonly apis: Maybe<ReadonlyArray<Maybe<SitePluginPluginOptionsApis>>>;
+  readonly pathToEmotionCacheProps: Maybe<Scalars['String']>;
   readonly pathCheck: Maybe<Scalars['Boolean']>;
   readonly allExtensions: Maybe<Scalars['Boolean']>;
   readonly isTSX: Maybe<Scalars['Boolean']>;
@@ -2126,6 +2127,7 @@ type SitePluginPluginOptionsFilterInput = {
   readonly apiKey: Maybe<StringQueryOperatorInput>;
   readonly serviceId: Maybe<StringQueryOperatorInput>;
   readonly apis: Maybe<SitePluginPluginOptionsApisFilterListInput>;
+  readonly pathToEmotionCacheProps: Maybe<StringQueryOperatorInput>;
   readonly pathCheck: Maybe<BooleanQueryOperatorInput>;
   readonly allExtensions: Maybe<BooleanQueryOperatorInput>;
   readonly isTSX: Maybe<BooleanQueryOperatorInput>;
@@ -2382,6 +2384,7 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.serviceId'
   | 'pluginCreator.pluginOptions.apis'
   | 'pluginCreator.pluginOptions.apis.endpoint'
+  | 'pluginCreator.pluginOptions.pathToEmotionCacheProps'
   | 'pluginCreator.pluginOptions.pathCheck'
   | 'pluginCreator.pluginOptions.allExtensions'
   | 'pluginCreator.pluginOptions.isTSX'
@@ -2772,6 +2775,7 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.serviceId'
   | 'pluginOptions.apis'
   | 'pluginOptions.apis.endpoint'
+  | 'pluginOptions.pathToEmotionCacheProps'
   | 'pluginOptions.pathCheck'
   | 'pluginOptions.allExtensions'
   | 'pluginOptions.isTSX'
@@ -3140,17 +3144,27 @@ type MicrocmsContentsSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type usersnakayamatomokiDesktopportfoliosrcpagescontentsmicrocmsContentsContentsIdTsx1698422326QueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type usersnakayamatomokiDesktopportfoliosrcpagescontentsmicrocmsContentsContentsIdTsx1698422326Query = { readonly microcmsContents: Maybe<Pick<MicrocmsContents, 'contentsId' | 'title' | 'body' | 'url'>> };
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
+type Unnamed_1_Query = { readonly allMicrocmsContents: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsContents, 'contentsId' | 'title'> }> } };
+
+type Unnamed_2_QueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+type Unnamed_2_Query = { readonly microcmsContents: Maybe<Pick<MicrocmsContents, 'contentsId' | 'title' | 'body' | 'url'>> };
+
+type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_3_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -3177,20 +3191,5 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type Unnamed_2_Query = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
-
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
-type usersnakayamatomokiDesktopportfoliosrcpagesindexTsx695859245QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type usersnakayamatomokiDesktopportfoliosrcpagesindexTsx695859245Query = { readonly allMicrocmsContents: { readonly edges: ReadonlyArray<{ readonly node: Pick<MicrocmsContents, 'contentsId' | 'title'> }> } };
 
 }

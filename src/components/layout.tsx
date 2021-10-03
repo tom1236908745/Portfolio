@@ -11,7 +11,7 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+export default function Layout ({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header siteTitle={`Portfolio`} />
@@ -41,5 +41,3 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
-export default Layout

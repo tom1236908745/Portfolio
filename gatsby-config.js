@@ -51,6 +51,8 @@ module.exports = {
       },
     },
     // graphqlのレスポンス型
-    `gatsby-plugin-typegen`
+    `gatsby-plugin-typegen`,
+    // material ui
+    `gatsby-plugin-material-ui`
   ],
 }

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,6 +9,7 @@ const IndexPage = ({ data }: { data: any }) => (
   <Layout>
     <Seo title="Home" />
 
+    {/* 画像使い方
     <StaticImage
       src="../images/gatsby-astronaut.png"
       width={100}
@@ -16,7 +17,7 @@ const IndexPage = ({ data }: { data: any }) => (
       formats={["auto", "webp", "avif"]}
       alt="A Gatsby astronaut"
       style={{ marginBottom: `1.45rem`, justifyContent: "center" }}
-    />
+    /> */}
     <ul style={{listStyle: `none`,}}>
       {data.allMicrocmsContents.edges.map(({ node }: { node: any }) => (
         <li key={node.contentsId}>
